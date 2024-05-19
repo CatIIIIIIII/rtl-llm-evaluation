@@ -1,0 +1,61 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/wangning/RTLDebugger/rtl-llm-evaluation/benchmark/rtllm/traffic_light
+vtestbench
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1716124001
+!i10b 1
+!s100 MKKRVl5@YTgFO4dBj2EZ@1
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+INP_1GVnKVjVjAG?a8cM2O0
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1715532580
+8testbench.v
+Ftestbench.v
+!i122 3
+L0 3 79
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1716124001.000000
+!s107 testbench.v|traffic_light.v|
+Z7 !s90 +acc|-work|work|-sv|traffic_light.v|testbench.v|
+!i113 1
+Z8 o+acc -work work -sv
+Z9 tCvgOpt 0
+vtraffic_light
+R1
+R2
+!i10b 1
+!s100 hnQ9z20l9PA9XU[XnL1763
+R3
+I3?5^gATJ;9?8]RoX=^z:^1
+R4
+S1
+R0
+w1716124001
+8traffic_light.v
+Ftraffic_light.v
+!i122 3
+L0 3 176
+R5
+r1
+!s85 0
+31
+R6
+Z10 !s107 testbench.v|traffic_light.v|
+R7
+!i113 1
+R8
+R9

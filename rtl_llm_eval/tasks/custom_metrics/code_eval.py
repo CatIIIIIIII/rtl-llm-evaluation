@@ -28,7 +28,7 @@ with:
 ################################################################################
 """
 
-def compute_code_eval(generations, references, check_correct, k=[1, 10, 100], num_workers=4, timeout=3.0):
+def compute_code_eval(generations, references, check_correct, k=[1, 5, 100], num_workers=4, timeout=3.0):
 
     if os.getenv("HF_ALLOW_CODE_EVAL", 0) != "1":
         raise ValueError(_WARNING)
@@ -38,27 +38,31 @@ def compute_code_eval(generations, references, check_correct, k=[1, 10, 100], nu
     assert "Model Technology ModelSim" in cmd_output, "Please install Modelsim and make sure that the execuation file has been added to $PATH."
 
     with ThreadPoolExecutor(max_workers=num_workers) as executor:
-        futures = []
         n_samples = 0
         completion_id = Counter()
         results = defaultdict(list)
 
-        for task_id, (candidates, _) in enumerate(zip(generations, references)):
-            for candidate in candidates:
-                check_args = dict(
-                    task_id=task_id,
-                    exp_name=candidate["exp_name"],
-                    generation=candidate["generation"],
-                    completion_id=completion_id[task_id],
-                )
-                future = executor.submit(check_correct, **check_args)
-                futures.append(future)
-                completion_id[task_id] += 1
-                n_samples += 1
-
-        for future in as_completed(futures):
-            result = future.result()
-            results[result["task_id"]].append((result["completion_id"], result))
+        # Determine the number of candidates
+        n_cand = max(len(candidates) for candidates, _ in zip(generations, references))
+        for i_cand in range(n_cand):
+            futures = []
+            for task_id, (candidates, _) in enumerate(zip(generations, references)):
+                if i_cand < len(candidates):
+                    candidate = candidates[i_cand]
+                    check_args = dict(
+                        task_id=task_id,
+                        exp_name=candidate["exp_name"],
+                        generation=candidate["generation"],
+                        completion_id=completion_id[task_id],
+                    )
+                    future = executor.submit(check_correct, **check_args)
+                    futures.append(future)
+                    completion_id[task_id] += 1
+            
+            # Wait for all futures in this batch to complete
+            for future in as_completed(futures):
+                result = future.result()
+                results[result["task_id"]].append((result["completion_id"], result))
 
     total_syntax, correct_syntax = [], []
     total_testbench, correct_testbench = [], []
@@ -74,7 +78,7 @@ def compute_code_eval(generations, references, check_correct, k=[1, 10, 100], nu
     correct_syntax = np.array(correct_syntax)
     total_testbench = np.array(total_testbench)
     correct_testbench = np.array(correct_testbench)
-
+    
     ks = k
     if not isinstance(ks, (list, tuple)):
         ks = [ks]
@@ -82,21 +86,6 @@ def compute_code_eval(generations, references, check_correct, k=[1, 10, 100], nu
     pass_at_k_testbench = {f"pass@{k}": estimate_pass_at_k(total_testbench, correct_testbench, k).mean() for k in ks if (total_testbench >= k).all()}
 
     return pass_at_k_syntax, pass_at_k_testbench, results
-    # total, correct = [], []
-    # for result in results.values():
-    #     result.sort()
-    #     passed = [r[1]["passed"] for r in result]
-    #     total.append(len(passed))
-    #     correct.append(sum(passed))
-    # total = np.array(total)
-    # correct = np.array(correct)
-
-    # ks = k
-    # if not isinstance(ks, (list, tuple)):
-    #     ks = [ks]
-    # pass_at_k = {f"pass@{k}": estimate_pass_at_k(total, correct, k).mean() for k in ks if (total >= k).all()}
-
-    # return pass_at_k, results
 
 
 def estimate_pass_at_k(num_samples, num_correct, k):

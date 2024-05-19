@@ -1,0 +1,211 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/wangning/RTLDebugger/rtl-llm-evaluation/benchmark/rtllm/pe
+vadd_32_carry_0
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1716123955
+!i10b 1
+!s100 d54m]LM;gOPTLJJYPgPk42
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I9<^TN`ZQ[zh;od7ZfNA=b2
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+Z5 w1716123955
+Z6 8pe.v
+Z7 Fpe.v
+!i122 0
+L0 84 17
+Z8 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z9 !s108 1716123955.000000
+Z10 !s107 testbench.v|pe.v|
+Z11 !s90 +acc|-work|work|-sv|pe.v|testbench.v|
+!i113 1
+Z12 o+acc -work work -sv
+Z13 tCvgOpt 0
+vmac
+R1
+R2
+!i10b 1
+!s100 5@6zF4Q6LoGoZlQkzU_`T2
+R3
+I;B[HG`akdYJ2d?NKhX1;A1
+R4
+S1
+R0
+R5
+R6
+R7
+!i122 0
+L0 26 17
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+vmac_pe
+R1
+!s110 1716123978
+!i10b 1
+!s100 COBncN^XBlVFHGfhMVdZ31
+R3
+I:]clJ:dgHazHJ^keLkgWN0
+R4
+S1
+R0
+w1716123978
+R6
+R7
+!i122 2
+L0 40 21
+R8
+r1
+!s85 0
+31
+!s108 1716123978.000000
+R10
+R11
+!i113 1
+R12
+R13
+vmac_pe_tb
+R1
+!s110 1716123967
+!i10b 1
+!s100 Tz1NHZmMW:GcBSc3Q2cm91
+R3
+Ig>91<WLOjBBeDS3F`z[cL1
+R4
+S1
+R0
+w1716123967
+R6
+R7
+!i122 1
+L0 19 66
+R8
+r1
+!s85 0
+31
+!s108 1716123967.000000
+R10
+R11
+!i113 1
+R12
+R13
+vmul_32
+R1
+R2
+!i10b 1
+!s100 J6dJAQ4?X`M3S5DJXMY_l3
+R3
+IH2S;mjS8?boLlPGPTg;gh1
+R4
+S1
+R0
+R5
+R6
+R7
+!i122 0
+L0 66 17
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+vpe
+R1
+!s110 1716123988
+!i10b 1
+!s100 ;M:Jh?B2Ma6MbXzAl@O681
+R3
+IJ2lL68aHH92FH]<Jgk1YZ0
+R4
+S1
+R0
+w1716123988
+R6
+R7
+!i122 3
+L0 3 18
+R8
+r1
+!s85 0
+31
+!s108 1716123988.000000
+R10
+R11
+!i113 1
+R12
+R13
+vreg_pe
+R1
+R2
+!i10b 1
+!s100 Hk5d0M^L0LTLbP6?;CZ8k0
+R3
+I_g^P`H^ECV_bj5nk7kIc`2
+R4
+S1
+R0
+R5
+R6
+R7
+!i122 0
+L0 44 21
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+vtestbench
+R1
+!s110 1716123999
+!i10b 1
+!s100 Va__cBZFF2WC5FLI3cRa21
+R3
+Ijdn?zd3PDWh@P8NOW7E<B2
+R4
+S1
+R0
+w1715529084
+8testbench.v
+Ftestbench.v
+!i122 4
+L0 3 56
+R8
+r1
+!s85 0
+31
+!s108 1716123999.000000
+R10
+R11
+!i113 1
+R12
+R13

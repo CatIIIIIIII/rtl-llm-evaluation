@@ -431,7 +431,7 @@ def remove_after_return(code):
     return code
 
 
-def exec_shell(cmd_str, timeout=8):
+def exec_shell(cmd_str, timeout=3.0):
     def run_shell_func(sh, output):
         try:
             # Run the command and capture the output and error

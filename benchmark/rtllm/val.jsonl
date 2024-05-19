@@ -19,7 +19,6 @@
 {"exp_name": "parallel2serial"}
 {"exp_name": "pe"}
 {"exp_name": "pulse_detect"}
-{"exp_name": "radix2_div"}
 {"exp_name": "RAM"}
 {"exp_name": "right_shifter"}
 {"exp_name": "serial2parallel"}

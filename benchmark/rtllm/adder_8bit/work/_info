@@ -1,0 +1,210 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/wangning/RTLDebugger/rtl-llm-evaluation/benchmark/rtllm/adder_8bit
+vadder_8bit
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1716123961
+!i10b 1
+!s100 6YT=I2lmU;hFI>n^>VC8D0
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IVCWeaHRgPc<PjlNfH>C_D0
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+Z5 w1716123961
+Z6 8adder_8bit.v
+Z7 Fadder_8bit.v
+!i122 0
+L0 3 21
+Z8 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z9 !s108 1716123961.000000
+Z10 !s107 testbench.v|adder_8bit.v|
+Z11 !s90 +acc|-work|work|-sv|adder_8bit.v|testbench.v|
+!i113 1
+Z12 o+acc -work work -sv
+Z13 tCvgOpt 0
+vadder_8bit_bit_level_4
+R1
+R2
+!i10b 1
+!s100 ?_=_L=3B29o<ZA12V[mZo2
+R3
+I@30Nc1fhF4W32J0PC=Ofc0
+R4
+S1
+R0
+R5
+R6
+R7
+!i122 0
+L0 62 12
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+vadder_8bit_bit_level_5
+R1
+R2
+!i10b 1
+!s100 i5S^@?_<NkAaIRJGh@zD81
+R3
+I3aVj5bbWB?PnnTY6m3AzB2
+R4
+S1
+R0
+R5
+R6
+R7
+!i122 0
+L0 75 11
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+vadder_8bit_bit_level_6
+R1
+R2
+!i10b 1
+!s100 a`ch98lSdGPVLQc>F6cc=2
+R3
+IQZaFZBXKfDcPTmR3TTD2Z3
+R4
+S1
+R0
+R5
+R6
+R7
+!i122 0
+L0 87 12
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+vadder_8bit_bit_level_7
+R1
+R2
+!i10b 1
+!s100 @db1JFV[hX6L;J:<ee7<M1
+R3
+Ii=V80]PBhKkZ6D@Jj55=c3
+R4
+S1
+R0
+R5
+R6
+R7
+!i122 0
+L0 100 12
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+vadder_8bit_bit_level_8
+R1
+R2
+!i10b 1
+!s100 ?W8AWG98J1?L@@NLooZgo1
+R3
+IoGTkm;@m=bIEH?dH9a_JH2
+R4
+S1
+R0
+R5
+R6
+R7
+!i122 0
+L0 113 11
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+vadder_8bit_bit_level_9
+R1
+R2
+!i10b 1
+!s100 `Kf0YzOmS@Z1A?gfSAGbU1
+R3
+Ima8K9NE55HQF4Kci0:mi?1
+R4
+S1
+R0
+R5
+R6
+R7
+!i122 0
+L0 125 10
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+vtestbench
+R1
+R2
+!i10b 1
+!s100 4nGO5F>f;hUbW30f_]SE]2
+R3
+IP69DG49CD_7]doSR:G`z>0
+R4
+S1
+R0
+w1715241362
+8testbench.v
+Ftestbench.v
+!i122 0
+L0 3 40
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
