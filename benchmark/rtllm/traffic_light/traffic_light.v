@@ -1,178 +1,148 @@
 
 
 module traffic_light(
-    input rst_n,
-    input clk,
-    input pass_request,
-    output reg [7:0] clock,
-    output reg red,
-    output reg yellow,
-    output reg green
-    );
+    rst_n,
+    clk,
+    pass_request,
+    clock,
+    red,
+    yellow,
+    green
+);
 
     // Parameters
-    localparam  idle      = 2'b00;
-    localparam  s1_red    = 2'b01;
-    localparam  s2_yellow  = 2'b10;
-    localparam  s3_green   = 2'b11;
+    parameter idle = 2'b00;
+    parameter s1_red = 2'b01;
+    parameter s2_yellow = 2'b10;
+    parameter s3_green = 2'b11;
 
-    // Registers and wires
+    // Inputs
+    input rst_n;
+    input clk;
+    input pass_request;
+
+    // Outputs
+    output [7:0] clock;
+    output red;
+    output yellow;
+    output green;
+
+    // Registers and Wires
     reg [7:0] cnt;
     reg [1:0] state;
     reg p_red;
     reg p_yellow;
     reg p_green;
 
-    // The following always block is responsible for the state transition logic.
+    // Implementation
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             state <= idle;
-        end
-        else begin
-            case(state)
+        end else begin
+            case (state)
                 idle: begin
-                    red <= 1'b0;
-                    yellow <= 1'b0;
-                    green <= 1'b0;
                     state <= s1_red;
                 end
                 s1_red: begin
-                    red <= 1'b1;
-                    yellow <= 1'b0;
-                    green <= 1'b0;
-                    if (cnt == 8'b00000000) begin
+                    if (cnt == 3) begin
                         state <= s3_green;
-                    end
-                    else begin
-                        cnt <= cnt - 1;
+                    end else begin
+                        state <= s1_red;
                     end
                 end
                 s2_yellow: begin
-                    red <= 1'b0;
-                    yellow <= 1'b1;
-                    green <= 1'b0;
-                    if (cnt == 8'b00000000) begin
+                    if (cnt == 3) begin
                         state <= s1_red;
-                    end
-                    else begin
-                        cnt <= cnt - 1;
+                    end else begin
+                        state <= s2_yellow;
                     end
                 end
                 s3_green: begin
-                    red <= 1'b0;
-                    yellow <= 1'b0;
-                    green <= 1'b1;
-                    if (cnt == 8'b00000000) begin
+                    if (cnt == 3) begin
                         state <= s2_yellow;
-                    end
-                    else begin
-                        cnt <= cnt - 1;
+                    end else begin
+                        state <= s3_green;
                     end
                 end
             endcase
         end
     end
 
-    // The following always block handles the counting logic of the internal counter (cnt).
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            cnt <= 8'b10001000;
-        end
-        else begin
-            if (state == s1_red) begin
-                if (cnt == 8'b00000000) begin
-                    cnt <= 8'b10001000;
-                end
-                else begin
-                    cnt <= cnt - 1;
-                end
-            end
-            else if (state == s2_yellow) begin
-                if (cnt == 8'b00000000) begin
-                    cnt <= 8'b10001000;
-                end
-                else begin
-                    cnt <= cnt - 1;
-                end
-            end
-            else if (state == s3_green) begin
-                if (cnt == 8'b00000000) begin
-                    cnt <= 8'b10001000;
-                end
-                else begin
-                    cnt <= cnt - 1;
-                end
-            end
-            else begin
-                if (!rst_n) begin
-                    cnt <= 8'b10001000;
-                end
-                else begin
-                    cnt <= cnt - 1;
-                end
+            cnt <= 8'b00000000;
+        end else begin
+            if (pass_request && green) begin
+                cnt <= 8'b00000000;
+            end else if (pass_request && yellow) begin
+                cnt <= 8'b00000000;
+            end else if (pass_request && red) begin
+                cnt <= 8'b00000000;
+            end else if (red && p_red) begin
+                cnt <= 8'b00000000;
+            end else if (yellow && p_yellow) begin
+                cnt <= 8'b00000000;
+            end else if (green && p_green) begin
+                cnt <= 8'b00000000;
+            end else if (cnt == 0) begin
+                cnt <= 8'b00000000;
+            end else begin
+                cnt <= cnt - 1;
             end
         end
     end
 
-    // The following assign statement assigns the value of the internal counter (cnt) to the output clock.
-    assign clock = cnt;
-
-    // The following always block handles the output signals.
     always @(posedge clk or negedge rst_n) begin
-        if (!rst_n) begin
-            red <= 1'b0;
-            yellow <= 1'b0;
-            green <= 1'b0;
-        end
-        else begin
-            red <= p_red;
-            yellow <= p_yellow;
-            green <= p_green;
-        end
-    end
-
-    // The following always block calculates the next values for the red, yellow, and green signals.
-    always @(state or cnt or pass_request) begin
-        case(state)
-            idle: begin
-                p_red <= 1'b0;
-                p_yellow <= 1'b0;
-                p_green <= 1'b0;
-            end
-            s1_red: begin
-                p_red <= 1'b1;
-                p_yellow <= 1'b0;
-                p_green <= 1'b0;
-            end
-            s2_yellow: begin
-                p_red <= 1'b0;
-                p_yellow <= 1'b1;
-                p_green <= 1'b0;
-            end
-            s3_green: begin
-                p_red <= 1'b0;
-                p_yellow <= 1'b0;
-                p_green <= 1'b1;
-            end
-        endcase
         if (!rst_n) begin
             p_red <= 1'b0;
             p_yellow <= 1'b0;
             p_green <= 1'b0;
-        end
-        else if (pass_request) begin
-            if (green) begin
-                if (cnt > 8'b10000000) begin
-                    p_green <= 1'b0;
-                end
-                else begin
-                    p_green <= 1'b1;
-                end
-            end
-            else begin
-                p_green <= 1'b0;
-            end
+        end else begin
+            p_red <= red;
+            p_yellow <= yellow;
+            p_green <= green;
         end
     end
 
+    assign clock = cnt;
+    assign red = p_red;
+    assign yellow = p_yellow;
+    assign green = p_green;
+
+    // END
+    // synthesis translate_off
+    initial begin
+        $display("This is the end of the simulation.");
+        $finish;
+    end
+    // synthesis translate_on
+
 endmodule
+
+// synthesis translate_off
+module traffic_light_testbench;
+
+    reg rst_n;
+    reg clk;
+    reg pass_request;
+
+    wire [7:0] clock;
+    wire red;
+    wire yellow;
+    wire green;
+
+    traffic_light dut(
+        .rst_n(rst_n),
+        .clk(clk),
+        .pass_request(pass_request),
+        .clock(clock),
+        .red(red),
+        .yellow(yellow),
+        .green(green)
+    );
+
+    initial begin
+        $display("This is the beginning of the simulation.");
+        rst_n = 1'b0;
+        clk = 1'b0;
+        pass_request = 1'b0;

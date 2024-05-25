@@ -3,44 +3,65 @@
 module signal_generator(
     input clk,
     input rst_n,
-    output [4:0] wave
-    );
+    output reg [4:0] wave
+);
+
+    // Define constants
+    localparam STATE_SIZE = 1;
+    localparam STATE_IDLE = 0;
+    localparam STATE_GENERATING = 1;
     
-    reg [4:0] wave_out;
-    reg [1:0] state;
+    // Define internal variables
+    reg [STATE_SIZE-1:0] state;
     
-    always @(posedge clk) begin
-        if(!rst_n) begin
-            wave_out <= 5'b0;
-            state <= 2'b0;
+    // Define helper functions
+    function [4:0] incr_wave;
+        input [4:0] wave;
+        begin
+            if (wave == 31)
+                incr_wave = 0;
+            else
+                incr_wave = wave + 1;
         end
-        else begin
-            case(state)
-            0: begin
-                if(wave_out != 31) begin
-                    wave_out <= wave_out + 1;
-                    state <= 1;
+    endfunction
+    
+    function [4:0] decr_wave;
+        input [4:0] wave;
+        begin
+            if (wave == 0)
+                decr_wave = 31;
+            else
+                decr_wave = wave - 1;
+        end
+    endfunction
+    
+    // Define state transition logic
+    always @(posedge clk or negedge rst_n) begin
+        if (~rst_n) begin
+            state <= STATE_IDLE;
+            wave <= 0;
+        end else begin
+            case (state)
+                STATE_IDLE: begin
+                    if (wave == 31)
+                        state <= STATE_GENERATING;
                 end
-                else begin
-                    state <= 0;
+                STATE_GENERATING: begin
+                    if (wave == 0)
+                        state <= STATE_IDLE;
                 end
-            end
-            1: begin
-                if(wave_out != 0) begin
-                    wave_out <= wave_out - 1;
-                    state <= 0;
+            endcase
+            
+            case (state)
+                STATE_IDLE: begin
+                    wave <= incr_wave(wave);
                 end
-                else begin
-                    state <= 1;
+                STATE_GENERATING: begin
+                    wave <= decr_wave(wave);
                 end
-            end
-            default: begin
-                state <= 0;
-            end
             endcase
         end
     end
     
-    assign wave = wave_out;
-    
+    //END
 endmodule

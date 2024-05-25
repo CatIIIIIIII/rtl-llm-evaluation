@@ -1,13 +1,13 @@
 # vsim -c -do "run -all; quit" testbench 
-# Start time: 13:06:41 on May 19,2024
+# Start time: 03:23:45 on May 25,2024
 # Loading sv_std.std
 # Loading work.testbench
 # Loading work.parallel2serial
-# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'dout'. The port definition is at: parallel2serial.v(8).
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/dut File: testbench.v Line: 11
 # run -all
-# ===========Test completed with         100 /100 failures===========
-# ** Note: $finish    : testbench.v(63)
-#    Time: 7 us  Iteration: 0  Instance: /testbench
-# End time: 13:06:41 on May 19,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 1
+# Break key hit
+# Break in Module parallel2serial at parallel2serial.v line 27
+# Stopped at parallel2serial.v line 27
+#  quit
+# End time: 03:24:53 on May 25,2024, Elapsed time: 0:01:36
+# Errors: 0, Warnings: 0
+ Warnings: 0

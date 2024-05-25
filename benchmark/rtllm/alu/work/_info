@@ -1,7 +1,6 @@
 m255
 K4
 z2
-!s11f MIXED_VERSIONS
 13
 !s112 1.1
 !i10d 8192
@@ -9,53 +8,28 @@ z2
 !i10f 100
 cModel Technology
 Z0 d/home/wangning/RTLDebugger/rtl-llm-evaluation/benchmark/rtllm/alu
-valu
-Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-!s110 1716123974
-!i10b 1
-!s100 4lDW57CQ<zoEj=UUI5LWT1
-Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
-ICA^MH5zi>5_=DF2RzNb]l1
-Z3 VDg1SIo80bB@j0V0VzS_@n1
-S1
-R0
-w1716123974
-8alu.v
-Falu.v
-!i122 1
-L0 3 93
-Z4 OV;L;2020.1;71
-r1
-!s85 0
-31
-!s108 1716123974.000000
-!s107 testbench.v|alu.v|
-Z5 !s90 +acc|-work|work|-sv|alu.v|testbench.v|
-!i113 1
-Z6 o+acc -work work -sv
-Z7 tCvgOpt 0
 vtestbench
-R1
-!s110 1716123994
+DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+!s110 1716607400
 !i10b 1
 !s100 T@D0NR1<MG2leKYB=;I;40
-R2
+!s11b Dg1SIo80bB@j0V0VzS_@n1
 I`HKCD^nzdzN86QMB8XM092
-R3
+VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
 w1715481922
 8testbench.v
 Ftestbench.v
-!i122 3
+!i122 0
 L0 3 86
-R4
+OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1716123994.000000
-Z8 !s107 testbench.v|alu.v|
-R5
+!s108 1716607400.000000
+!s107 testbench.v|alu.v|
+!s90 +acc|-work|work|-sv|alu.v|testbench.v|
 !i113 1
-R6
-R7
+o+acc -work work -sv
+tCvgOpt 0

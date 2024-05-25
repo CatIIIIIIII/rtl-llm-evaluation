@@ -28,7 +28,7 @@ with:
 ################################################################################
 """
 
-def compute_code_eval(generations, references, check_correct, k=[1, 5, 100], num_workers=4, timeout=3.0):
+def compute_code_eval(generations, references, check_correct, k=[1, 5, 100], num_workers=8, timeout=3.0):
 
     if os.getenv("HF_ALLOW_CODE_EVAL", 0) != "1":
         raise ValueError(_WARNING)
@@ -38,7 +38,6 @@ def compute_code_eval(generations, references, check_correct, k=[1, 5, 100], num
     assert "Model Technology ModelSim" in cmd_output, "Please install Modelsim and make sure that the execuation file has been added to $PATH."
 
     with ThreadPoolExecutor(max_workers=num_workers) as executor:
-        n_samples = 0
         completion_id = Counter()
         results = defaultdict(list)
 

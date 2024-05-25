@@ -32,7 +32,7 @@ class RTLLM(Task):
 
     def __init__(self):
         super().__init__(
-            stop_words=["\n\n\n\n\n"],
+            stop_words=["\n\n\n\n\n", "\\END"],
         )
         self._clean()
         
@@ -58,7 +58,7 @@ class RTLLM(Task):
         with open(osp.join(exp_path, "design_description.txt")) as f:
             design_desc = f.readlines()
         design_desc = "".join(design_desc)
-        prompt = f'"""{design_desc}\nYou could use multiple modules.\n"""'
+        prompt = f'"""{design_desc}\nYou could define helper functions if needed. When you have finished, end the whole file with a line containing only "//END". \n"""'
         return prompt
 
     def get_reference(self, doc):

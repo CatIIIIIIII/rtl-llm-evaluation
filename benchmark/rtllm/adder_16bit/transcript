@@ -1,0 +1,10 @@
+# vsim -c -do "run -all; quit" testbench 
+# Start time: 03:23:35 on May 25,2024
+# Loading sv_std.std
+# Loading work.testbench
+# Loading work.adder_16bit
+# run -all
+# ===========Test completed with          96 / 100 failures===========
+#  quit
+# End time: 03:23:36 on May 25,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

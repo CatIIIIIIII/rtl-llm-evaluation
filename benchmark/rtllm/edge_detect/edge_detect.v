@@ -1,44 +1,27 @@
 
-
 module edge_detect(clk, rst_n, a, rise, down);
+    input clk, rst_n, a;
+    output rise, down;
 
-    // Inputs
-    input     clk;
-    input     rst_n;
-    input     a;
+    reg rise, down;
+    reg prev_a;
 
-    // Outputs
-    output    rise;
-    output    down;
-
-    // Variables for edge detection
-    reg       rise_edge;
-    reg       down_edge;
-    reg       a_q;
-
-    // Detection
     always @(posedge clk or negedge rst_n) begin
-        if (!rst_n) begin
-            rise_edge <= 0;
-            down_edge <= 0;
-            a_q <= 0;
-        end
-        else begin
-            a_q <= a;
-            if (a_q && !a)
-                down_edge <= 1;
-            else if (!a_q && a)
-                rise_edge <= 1;
-            else
-                rise_edge <= 0;
-                down_edge <= 0;
+        if (~rst_n) begin
+            rise <= 0;
+            down <= 0;
+            prev_a <= 0;
+        end else begin
+            if (a == 1 && prev_a == 0) begin
+                rise <= 1;
+            end else if (a == 0 && prev_a == 1) begin
+                down <= 1;
+            end else begin
+                rise <= 0;
+                down <= 0;
+            end
+            prev_a <= a;
         end
     end
-
-    // Synchronize the output signals to the clock
-    always @(posedge clk) begin
-        rise <= rise_edge;
-        down <= down_edge;
-    end
-
 endmodule
+//END

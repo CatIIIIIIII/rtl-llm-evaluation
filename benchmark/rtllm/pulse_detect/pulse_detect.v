@@ -2,50 +2,56 @@
 
 module pulse_detect(clk, rst_n, data_in, data_out);
 
-    parameter initial = 3'b000;
-    parameter wait = 3'b001;
-    parameter detect = 3'b010;
-    parameter finish = 3'b100;
+    input clk, rst_n, data_in;
+    output reg data_out;
 
-    input clk;
-    input rst_n;
-    input data_in;
-    output reg data_out = 0;
+    reg [1:0] state;
 
-    reg [2:0] state = initial;
+    parameter [1:0]
+        IDLE = 2'b00,
+        PULSE = 2'b01,
+        PULSE_END = 2'b10;
 
     always @(posedge clk or negedge rst_n) begin
-        if (!rst_n) begin
-            state <= initial;
+        if (~rst_n) begin
+            state <= IDLE;
             data_out <= 0;
         end else begin
-            case(state)
-                initial: begin
-                    data_out <= 0;
+            case (state)
+                IDLE: begin
                     if (data_in) begin
-                        state <= wait;
-                    end
-                end
-                wait: begin
-                    data_out <= 0;
-                    if (!data_in) begin
-                        state <= detect;
-                    end
-                end
-                detect: begin
-                    data_out <= 1;
-                    if (data_in) begin
-                        state <= detect;
+                        state <= PULSE;
+                        data_out <= 0;
                     end else begin
-                        state <= finish;
+                        state <= IDLE;
+                        data_out <= 0;
                     end
                 end
-                finish: begin
+                PULSE: begin
+                    if (data_in) begin
+                        state <= PULSE;
+                        data_out <= 0;
+                    end else begin
+                        state <= PULSE_END;
+                        data_out <= 1;
+                    end
+                end
+                PULSE_END: begin
+                    if (data_in) begin
+                        state <= PULSE;
+                        data_out <= 0;
+                    end else begin
+                        state <= IDLE;
+                        data_out <= 0;
+                    end
+                end
+                default: begin
+                    state <= IDLE;
                     data_out <= 0;
-                    state <= initial;
                 end
             endcase
         end
     end
-
 endmodule
+
+//END

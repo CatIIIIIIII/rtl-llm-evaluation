@@ -1,6 +1,7 @@
 m255
 K4
 z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
 13
 !s112 1.1
 !i10d 8192
@@ -8,59 +9,34 @@ z2
 !i10f 100
 cModel Technology
 Z0 d/home/wangning/RTLDebugger/rtl-llm-evaluation/benchmark/rtllm/multi_booth_8bit
-vmulti_booth_8bit_tb
+vmulti_booth_8bit
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1716123977
+Z2 !s110 1716607423
 !i10b 1
-!s100 lB0kOhhcZg;b06H46Uol;3
+!s100 FbVfkESKddkPMaPcCY08_0
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IM7I:A7oJN82abO9U:i;A^1
+ID9>oS]A0SWZKAd][c?ReS2
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-Z5 w1716123977
-Z6 8multi_booth_8bit.v
-Z7 Fmulti_booth_8bit.v
-!i122 2
-L0 94 38
-Z8 OV;L;2020.1;71
+w1716607423
+8multi_booth_8bit.v
+Fmulti_booth_8bit.v
+!i122 3
+L0 3 33
+Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z9 !s108 1716123977.000000
-Z10 !s107 testbench.v|multi_booth_8bit.v|
-Z11 !s90 +acc|-work|work|-sv|multi_booth_8bit.v|testbench.v|
+Z6 !s108 1716607423.000000
+!s107 testbench.v|multi_booth_8bit.v|
+Z7 !s90 +acc|-work|work|-sv|multi_booth_8bit.v|testbench.v|
 !i113 1
-Z12 o+acc -work work -sv
-Z13 tCvgOpt 0
-vmulti_booth_8bit_tb_solution
-R1
-R2
-!i10b 1
-!s100 b0?MPmi[KS^6=[6S:8kX]2
-R3
-I]9A3Bcb@AI?dhi4O@C=P82
-R4
-S1
-R0
-R5
-R6
-R7
-!i122 2
-L0 137 38
-R8
-r1
-!s85 0
-31
-R9
-R10
-R11
-!i113 1
-R12
-R13
+Z8 o+acc -work work -sv
+Z9 tCvgOpt 0
 vtestbench
 R1
-!s110 1716123998
+R2
 !i10b 1
 !s100 :Fk<INmDIT<C`TEdFoPXP2
 R3
@@ -71,15 +47,15 @@ R0
 w1715527647
 8testbench.v
 Ftestbench.v
-!i122 4
+!i122 3
 L0 5 70
-R8
+R5
 r1
 !s85 0
 31
-!s108 1716123998.000000
-R10
-R11
+R6
+Z10 !s107 testbench.v|multi_booth_8bit.v|
+R7
 !i113 1
-R12
-R13
+R8
+R9

@@ -1,0 +1,14 @@
+# vsim -c -do "run -all; quit" testbench 
+# Start time: 03:23:43 on May 25,2024
+# Loading sv_std.std
+# Loading work.testbench
+# Loading work.div_16bit
+# run -all
+# Break key hit
+# Break in Module div_16bit at div_16bit.v line 24
+# Stopped at div_16bit.v line 24
+#  quit
+# End time: 03:24:53 on May 25,2024, Elapsed time: 0:01:24
+# Errors: 0, Warnings: 0
+,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

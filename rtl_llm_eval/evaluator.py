@@ -65,9 +65,10 @@ class Evaluator:
 
         if len(generations[0]) > self.args.n_samples:
             generations = [l[: self.args.n_samples] for l in generations]
-            warnings.warn(
-                f"Number of tasks wasn't proportional to number of devices, we removed extra predictions to only keep nsamples={self.args.n_samples}"
-            )
+            if self.accelerator.is_main_process:
+                warnings.warn(
+                    f"Number of tasks wasn't proportional to number of devices, we removed extra predictions to only keep nsamples={self.args.n_samples}"
+                )
         return generations, references
 
     def evaluate(self, task_name, intermediate_generations=None):

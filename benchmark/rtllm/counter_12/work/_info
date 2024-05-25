@@ -9,56 +9,31 @@ z2
 !i10f 100
 cModel Technology
 Z0 d/home/wangning/RTLDebugger/rtl-llm-evaluation/benchmark/rtllm/counter_12
-vcounter
+vcounter_12
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1716123995
+Z2 !s110 1716607421
 !i10b 1
-!s100 ^Gk@F3=WYeglkO<I>?>f83
+!s100 cSc0UoW_Sid[PhST<W^zE1
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-Id>3^?Uc[kzbOje3AZ=PZG3
+ISjLb_i48=mK3T0gSaP@GN0
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-Z5 w1716123995
-Z6 8counter_12.v
-Z7 Fcounter_12.v
+w1716607421
+8counter_12.v
+Fcounter_12.v
 !i122 4
-L0 104 50
-Z8 OV;L;2020.1;71
+L0 2 35
+Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z9 !s108 1716123995.000000
+Z6 !s108 1716607421.000000
 !s107 testbench.v|counter_12.v|
-Z10 !s90 +acc|-work|work|-sv|counter_12.v|testbench.v|
+Z7 !s90 +acc|-work|work|-sv|counter_12.v|testbench.v|
 !i113 1
-Z11 o+acc -work work -sv
-Z12 tCvgOpt 0
-vcounter_12
-R1
-R2
-!i10b 1
-!s100 L@b^4E9Ug3`DQeU0f_HOJ2
-R3
-I6j:LmC[jO3C]3FkWe:L2^3
-R4
-S1
-R0
-R5
-R6
-R7
-!i122 4
-L0 3 53
-R8
-r1
-!s85 0
-31
-R9
-Z13 !s107 testbench.v|counter_12.v|
-R10
-!i113 1
-R11
-R12
+Z8 o+acc -work work -sv
+Z9 tCvgOpt 0
 vtestbench
 R1
 R2
@@ -74,13 +49,13 @@ w1715482250
 Ftestbench.v
 !i122 4
 L0 2 52
-R8
+R5
 r1
 !s85 0
 31
-R9
-R13
-R10
+R6
+Z10 !s107 testbench.v|counter_12.v|
+R7
 !i113 1
-R11
-R12
+R8
+R9

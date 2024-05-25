@@ -1,0 +1,24 @@
+# Current time # Current time Fri May 24 10:21:00 2024
+Fri May 24 10:21:00 2024
+# # ModelSimModelSim - Intel FPGA Edition - Intel FPGA Edition Stack Trace
+ Stack Trace
+# Program = # Program = vishvish
+
+# Id = "# Id = "2020.12020.1"
+"
+# Version = "# Version = "2020.022020.02"
+"
+# Date = "# Date = "Feb 28 2020Feb 28 2020"
+"
+# Platform = "# Platform = "linuxaloemlinuxaloem"
+"
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# Current time Sat May 25 03:24:53 2024
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'

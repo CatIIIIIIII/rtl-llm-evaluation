@@ -1,10 +1,11 @@
 # vsim -c -do "run -all; quit" testbench 
-# Start time: 13:06:31 on May 19,2024
+# Start time: 03:23:46 on May 25,2024
 # Loading sv_std.std
 # Loading work.testbench
 # Loading work.serial2parallel
-# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'din_serial'. The port definition is at: serial2parallel.v(7).
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/u0 File: testbench.v Line: 62
-# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (8) for port 'dout_parallel'. The port definition is at: serial2parallel.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/u0 File: testbench.v Line: 62
 # run -all
+# Break key hit
+# Simulation stop requested.
+#  quit
+# End time: 03:24:53 on May 25,2024, Elapsed time: 0:01:29
+# Errors: 0, Warnings: 0

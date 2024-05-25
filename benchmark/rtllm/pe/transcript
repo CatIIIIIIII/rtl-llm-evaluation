@@ -1,16 +1,13 @@
 # vsim -c -do "run -all; quit" testbench 
-# Start time: 13:06:08 on May 19,2024
+# Start time: 03:23:32 on May 25,2024
 # Loading sv_std.std
 # Loading work.testbench
 # Loading work.pe
-# Loading work.mac
-# Loading work.mul_32
-# ** Error: (vsim-3033) Instantiation of 'mul' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/dut/mac0/mul0 File: pe.v Line: 79
-#         Searched libraries:
-#             /home/wangning/RTLDebugger/rtl-llm-evaluation/benchmark/rtllm/pe/work
-# Loading work.add_32_carry_0
-# Loading work.reg_pe
-# Error loading design
-# End time: 13:06:09 on May 19,2024, Elapsed time: 0:00:01
-# Errors: 1, Warnings: 0
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/dut File: testbench.v Line: 10
+# ** Warning: (vsim-3722) testbench.v(10): [TFMPC] - Missing connection for port 'c'.
+# run -all
+# ===========Error===========
+#  quit
+# End time: 03:23:32 on May 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2

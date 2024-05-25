@@ -14,3 +14,22 @@
 # Date = "Feb 28 2020"
 # Platform = "linuxaloem"
 # 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# Current time Sun May 19 15:52:08 2024
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# transcript error: error writing "stdout": broken pipe
+    while executing
+"puts -nonewline stdout $s"
+# Current time Sat May 25 03:24:53 2024
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'

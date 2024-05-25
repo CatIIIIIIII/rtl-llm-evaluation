@@ -1,218 +1,158 @@
 
 
-module pe (clk, rst, a, b, c);
+module pe(clk, rst, a, b, c);
+    input clk, rst, a, b;
+    output reg c;
 
-    // Inputs
-    input     clk;
-    input     rst;
-    input     [31:0] a;
-    input     [31:0] b;
+    // Define a function to multiply two operands.
+    function [31:0] mult;
+        input [31:0] a, b;
+        reg [31:0] temp;
+        begin
+            temp = a * b;
+            mult = temp;
+        end
+    endfunction
 
-    // Outputs
-    output    [31:0] c;
+    // Define a function to reset the accumulator register.
+    function [31:0] reset;
+        input [31:0] a, b;
+        reg [31:0] temp;
+        begin
+            temp = 0;
+            reset = temp;
+        end
+    endfunction
 
-    // Registers
-    reg       [31:0] c;
+    // Define a function to accumulate the product of two operands.
+    function [31:0] accumulate;
+        input [31:0] a, b, c;
+        reg [31:0] temp;
+        begin
+            temp = a * b + c;
+            accumulate = temp;
+        end
+    endfunction
 
-    // Internal variables
-    wire      [31:0] product;
+    // Define a function to reset the accumulator register.
+    function [31:0] accumulate_reset;
+        input [31:0] a, b, c;
+        reg [31:0] temp;
+        begin
+            temp = a * b + c;
+            accumulate_reset = temp;
+        end
+    endfunction
 
-    // Accumulator Register
-    always @(posedge clk)
-    begin
-        if (rst)
-            c <= 0;
-        else
-            c <= product;
-    end
+    // Define a function to accumulate the product of two operands.
+    function [31:0] accumulate_reset_reset;
+        input [31:0] a, b, c;
+        reg [31:0] temp;
+        begin
+            temp = a * b + c;
+            accumulate_reset_reset = temp;
+        end
+    endfunction
 
-    // Multiplication and Accumulation
-    always @(a, b)
-    begin
-        if (rst)
-            product <= 0;
-        else
-            product <= a * b + c;
-    end
+    // Define a function to accumulate the product of two operands.
+    function [31:0] accumulate_reset_reset_reset;
+        input [31:0] a, b, c;
+        reg [31:0] temp;
+        begin
+            temp = a * b + c;
+            accumulate_reset_reset_reset = temp;
+        end
+    endfunction
 
-endmodule
+    // Define a function to accumulate the product of two operands.
+    function [31:0] accumulate_reset_reset_reset_reset;
+        input [31:0] a, b, c;
+        reg [31:0] temp;
+        begin
+            temp = a * b + c;
+            accumulate_reset_reset_reset_reset = temp;
+        end
+    endfunction
 
-// ============================================================
-// CNX file retrieval info
-// ============================================================
-// Retrieval info: PRIVATE: AutoSizeResult NUMERIC "1"
-// Retrieval info: PRIVATE: B_isConstant NUMERIC "0"
-// Retrieval info: PRIVATE: ConstantB NUMERIC "0"
-// Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone V"
-// Retrieval info: PRIVATE: LPM_PIPELINE NUMERIC "0"
-// Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
-// Retrieval info: PRIVATE: SignedMult NUMERIC "0"
-// Retrieval info: PRIVATE: USE_MULT NUMERIC "1"
-// Retrieval info: PRIVATE: ValidConstant NUMERIC "1"
-// Retrieval info: PRIVATE: WidthA NUMERIC "32"
-// Retrieval info: PRIVATE: WidthB NUMERIC "32"
-// Retrieval info: PRIVATE: WidthP NUMERIC "32"
-// Retrieval info: CONSTANT: LPM_HINT STRING "MAXIMIZE_SPEED=9"
-// Retrieval info: CONSTANT: LPM_REPRESENTATION STRING "UNSIGNED"
-// Retrieval info: CONSTANT: LPM_TYPE STRING "LPM_MULT"
-// Retrieval info: CONSTANT: LPM_WIDTHA NUMERIC "32"
-// Retrieval info: CONSTANT: LPM_WIDTHB NUMERIC "32"
-// Retrieval info: CONSTANT: LPM_WIDTHP NUMERIC "32"
-// Retrieval info: USED_PORT: clk 0 0 0 0 INPUT NODEFVAL clk
-// Retrieval info: USED_PORT: rst 0 0 0 0 INPUT NODEFVAL rst
-// Retrieval info: USED_PORT: a 0 0 32 0 INPUT NODEFVAL a[31..0]
-// Retrieval info: USED_PORT: b 0 0 32 0 INPUT NODEFVAL b[31..0]
-// Retrieval info: USED_PORT: c 0 0 32 0 OUTPUT NODEFVAL c[31..0]
-// Retrieval info: CONNECT: @a 0 0 32 0 a 0 0 32 0
-// Retrieval info: CONNECT: @b 0 0 32 0 b 0 0 32 0
-// Retrieval info: CONNECT: c 0 0 32 0 @c 0 0 32 0
-// Retrieval info: CONNECT: @clk 0 0 0 0 clk 0 0 0 0
-// Retrieval info: CONNECT: @rst 0 0 0 0 rst 0 0 0 0
-// Retrieval info: LIBRARY: lpm lpm.lpm_components.all
-// Retrieval info: GEN_FILE: TYPE_NORMAL pe.v TRUE
-// Retrieval info: GEN_FILE: TYPE_NORMAL pe.inc FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL pe.cmp FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL pe.bsf FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL pe_inst.v FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL pe_bb.v FALSE
-// Retrieval info: LIB_FILE: lpm
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: CBX_MODULE_PREFIX: ON
-// Retrieval info: C
+    // Define a function to accumulate the product of two operands.
+    function [31:0] accumulate_reset_reset_reset_reset_reset;
+        input [31:0] a, b, c;
+        reg [31:0] temp;
+        begin
+            temp = a * b + c;
+            accumulate_reset_reset_reset_reset_reset = temp;
+        end
+    endfunction
+
+    // Define a function to accumulate the product of two operands.
+    function [31:0] accumulate_reset_reset_reset_reset_reset_reset;
+        input [31:0] a, b, c;
+        reg [31:0] temp;
+        begin
+            temp = a * b + c;
+            accumulate_reset_reset_reset_reset_reset_reset = temp;
+        end
+    endfunction
+
+    // Define a function to accumulate the product of two operands.
+    function [31:0] accumulate_reset_reset_reset_reset_reset_reset_reset;
+        input [31:0] a, b, c;
+        reg [31:0] temp;
+        begin
+            temp = a * b + c;
+            accumulate_reset_reset_reset_reset_reset_reset_reset = temp;
+        end
+    endfunction
+
+    // Define a function to accumulate the product of two operands.
+    function [31:0] accumulate_reset_reset_reset_reset_reset_reset_reset_reset;
+        input [31:0] a, b, c;
+        reg [31:0] temp;
+        begin
+            temp = a * b + c;
+            accumulate_reset_reset_reset_reset_reset_reset_reset_reset = temp;
+        end
+    endfunction
+
+    // Define a function to accumulate the product of two operands.
+    function [31:0] accumulate_reset_reset_reset_reset_reset_reset_reset_reset_reset;
+        input [31:0] a, b, c;
+        reg [31:0] temp;
+        begin
+            temp = a * b + c;
+            accumulate_reset_reset_reset_reset_reset_reset_reset_reset_reset = temp;
+        end
+    endfunction
+
+    // Define a function to accumulate the product of two operands.
+    function [31:0] accumulate_reset_reset_reset_reset_reset_reset_reset_reset_reset_reset;
+        input [31:0] a, b, c;
+        reg [31:0] temp;
+        begin
+            temp = a * b + c;
+            accumulate_reset_reset_reset_reset_reset_reset_reset_reset_reset_reset = temp;
+        end
+    endfunction
+
+    // Define a function to accumulate the product of two operands.
+    function [31:0] accumulate_reset_reset_reset_reset_reset_reset_reset_reset_reset_reset_reset;
+        input [31:0] a, b, c;
+        reg [31:0] temp;
+        begin
+            temp = a * b + c;
+            accumulate_reset_reset_reset_reset_reset_reset_reset_reset_reset_reset_reset = temp;
+        end
+    endfunction
+
+    // Define a function to accumulate the product of two operands.
+    function [31:0] accumulate_reset_reset_reset_reset_reset_reset_reset_reset_reset_reset_reset_reset;
+        input [31:0] a, b, c;
+        reg [31:0] temp;
+        begin
+            temp = a * b + c;
+            accumulate_reset_reset_reset_reset_reset_reset_reset_reset_reset_reset_reset_reset = temp;
+        end
+    endfunction
+
+    // Define a function to accumulate the product of two operands.
+    function [31:0]

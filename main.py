@@ -1,7 +1,6 @@
 import os
 import fnmatch
 import json
-import warnings
 
 import datasets
 import torch
@@ -259,7 +258,6 @@ def main():
         # Some models like CodeGeeX2 have pad_token as a read-only property
         except AttributeError:
             print("Not setting pad_token to eos_token")
-            pass
         WIZARD_LLAMA_MODELS = [
             "WizardLM/WizardCoder-Python-34B-V1.0",
             "WizardLM/WizardCoder-34B-V1.0",
