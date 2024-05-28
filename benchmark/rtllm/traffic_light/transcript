@@ -1,17 +1,17 @@
 # vsim -c -do "run -all; quit" testbench 
-# Start time: 03:23:33 on May 25,2024
+# Start time: 05:59:44 on May 28,2024
 # Loading sv_std.std
 # Loading work.testbench
 # Loading work.traffic_light
 # run -all
-# At time                   40, clock =   0, red = 0, yellow = 0, green = 0
-# At time                  140, clock =   0, red = 0, yellow = 0, green = 0
-# At time                  740, clock =   0, red = 0, yellow = 0, green = 0
-# At time                  890, clock =   0, red = 0, yellow = 0, green = 0
-# At time                  920, clock =   0, red = 0, yellow = 0, green = 0
-# At time                  930, clock =   0, red = 0, yellow = 0, green = 0
-# ===========Failed===========          4
+# At time                   40, clock =   8, red = 1, yellow = 0, green = 0
+# At time                  140, clock =   2, red = 0, yellow = 0, green = 1
+# At time                  740, clock =   5, red = 0, yellow = 1, green = 0
+# At time                  890, clock =  49, red = 0, yellow = 0, green = 1
+# At time                  920, clock =  46, red = 0, yellow = 0, green = 1
+# At time                  930, clock =  10, red = 0, yellow = 0, green = 1
+# ===========Your Design Passed===========
 # ** Note: $finish    : testbench.v(78)
 #    Time: 930 ns  Iteration: 0  Instance: /testbench
-# End time: 03:23:34 on May 25,2024, Elapsed time: 0:00:01
+# End time: 05:59:44 on May 28,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0

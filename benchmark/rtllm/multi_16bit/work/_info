@@ -1,6 +1,7 @@
 m255
 K4
 z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
 13
 !s112 1.1
 !i10d 8192
@@ -9,27 +10,52 @@ z2
 cModel Technology
 Z0 d/home/wangning/RTLDebugger/rtl-llm-evaluation/benchmark/rtllm/multi_16bit
 vmulti_16bit
-DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-!s110 1716607417
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1716875979
 !i10b 1
-!s100 H?dIgfi?1U]bao6zR]f[;2
-!s11b Dg1SIo80bB@j0V0VzS_@n1
-I]1[@[491mkmDZS[FbHf;73
-VDg1SIo80bB@j0V0VzS_@n1
+!s100 l_nAReTeIGC4I]>AbRBW;3
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+ITD_BT;f=TjI8LLnUZLP?R2
+Z4 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-w1716607417
+w1716875979
 8multi_16bit.v
 Fmulti_16bit.v
-!i122 0
-L0 3 61
-OV;L;2020.1;71
+!i122 3
+L0 2 62
+Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1716607417.000000
+Z6 !s108 1716875979.000000
 !s107 testbench.v|multi_16bit.v|
-!s90 +acc|-work|work|-sv|multi_16bit.v|testbench.v|
+Z7 !s90 +acc|-work|work|-sv|multi_16bit.v|testbench.v|
 !i113 1
-o+acc -work work -sv
-tCvgOpt 0
+Z8 o+acc -work work -sv
+Z9 tCvgOpt 0
+vtestbench
+R1
+R2
+!i10b 1
+!s100 kMS:Le>O3LG<^c3O8MFj23
+R3
+I0ckNgk:S<:::OHI07gbD83
+R4
+S1
+R0
+w1715527558
+8testbench.v
+Ftestbench.v
+!i122 3
+L0 1 75
+R5
+r1
+!s85 0
+31
+R6
+Z10 !s107 testbench.v|multi_16bit.v|
+R7
+!i113 1
+R8
+R9

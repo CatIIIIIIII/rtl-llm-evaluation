@@ -1,30 +1,27 @@
-
-module accu(clk, rst_n, data_in, valid_in, valid_out, data_out);
-	input clk, rst_n, valid_in;
-	input [7:0] data_in;
-	output valid_out;
-	output [9:0] data_out;
-	
-	reg [9:0] data_out;
-	reg valid_out;
-	reg [2:0] count;
-	
-	always @(posedge clk or negedge rst_n) begin
+ module accu(
+	input clk,
+	input rst_n,
+	input [7:0] data_in,
+	input valid_in,
+	output reg valid_out,
+	output reg [9:0] data_out
+);
+	reg [3:0] cnt;
+	always @(posedge clk) begin
 		if (~rst_n) begin
-			data_out <= 10'b0;
-			valid_out <= 1'b0;
-			count <= 3'b0;
+			cnt <= 0;
+			data_out <= 0;
+			valid_out <= 0;
 		end else begin
-			if (valid_in) begin
+			if (cnt == 4) begin
+				cnt <= 0;
 				data_out <= data_out + data_in;
-				count <= count + 1;
-				if (count == 3'b111) begin
-					valid_out <= 1'b1;
-				end
+				valid_out <= 1;
 			end else begin
-				valid_out <= 1'b0;
+				cnt <= cnt + 1;
+				data_out <= data_out + data_in;
+				valid_out <= 0;
 			end
 		end
 	end
 endmodule
-//END

@@ -1,11 +1,11 @@
 # vsim -c -do "run -all; quit" testbench 
-# Start time: 03:23:46 on May 25,2024
+# Start time: 05:59:43 on May 28,2024
 # Loading sv_std.std
 # Loading work.testbench
 # Loading work.serial2parallel
 # run -all
 # Break key hit
-# Simulation stop requested.
-#  quit
-# End time: 03:24:53 on May 25,2024, Elapsed time: 0:01:29
+# Break in Module serial2parallel at # End time: 06:00:50 on May 28,2024, Elapsed time: 0:01:25
+# Errors: 0, Warnings: 0
+ 06:00:50 on May 28,2024, Elapsed time: 0:01:41
 # Errors: 0, Warnings: 0

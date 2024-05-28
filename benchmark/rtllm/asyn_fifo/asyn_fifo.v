@@ -1,80 +1,170 @@
-
-
-module asyn_fifo #(parameter DEPTH = 16, parameter WIDTH = 8)
-(
-	input wclk,
-	input rclk,
-	input wrstn,
-	input rrstn,
-	input winc,
-	input rinc,
-	input [WIDTH-1:0] wdata,
-	output reg wfull,
-	output reg rempty,
-	output reg [WIDTH-1:0] rdata
-);
-
-// BEGIN
-
-// Define constants
-localparam PTR_WIDTH = $clog2(DEPTH);
-
-// Define dual-port RAM
-reg [WIDTH-1:0] RAM_MEM [DEPTH-1:0];
-
-// Define dual-port RAM interface
-reg [PTR_WIDTH-1:0] waddr;
-reg [PTR_WIDTH-1:0] raddr;
-reg wenc;
-reg renc;
-reg [WIDTH-1:0] wdata;
-reg [WIDTH-1:0] rdata;
-
-// Define write pointer
-reg [PTR_WIDTH-1:0] wptr;
-reg [PTR_WIDTH-1:0] wptr_buff;
-reg wptr_syn;
-
-// Define read pointer
-reg [PTR_WIDTH-1:0] rptr;
-reg [PTR_WIDTH-1:0] rptr_buff;
-reg rptr_syn;
-
-// Define full and empty signals
-reg wfull;
-reg rempty;
-
-// Define helper functions
-function [PTR_WIDTH-1:0] bin2gray;
-	input [PTR_WIDTH-1:0] bin;
-	begin
-		bin2gray = bin ^ {1'b0, bin[PTR_WIDTH-1:1]};
-	end
-endfunction
-
-function [PTR_WIDTH-1:0] gray2bin;
-	input [PTR_WIDTH-1:0] gray;
-	integer i;
-	begin
-		for (i=0; i<PTR_WIDTH; i=i+1)
-			if (i==0)
-				gray2bin[i] = gray[i];
-			else
-				gray2bin[i] = gray[i] ^ gray2bin[i-1];
-	end
-endfunction
-
-// Instantiate dual-port RAM
-dual_port_RAM #(
-	.DEPTH(DEPTH),
-	.WIDTH(WIDTH)
-) dual_port_RAM_inst (
-	.wclk(wclk),
-	.waddr(waddr),
-	.wdata(wdata),
-	.wenc(wenc),
-	.rclk(rclk),
-	.raddr(raddr),
-	.rdata(rdata),
-	.renc(renc)
-);
+ module asyn_fifo
+    WIDTH = 8,
+    DEPTH = 16
+    )
+   (
+    input 			wclk,
+    input 			wrstn,
+    input 			rclk,
+    input 			rrstn,
+    input 			winc,
+    input 			rinc,
+    input [WIDTH-1:0] 	wdata,
+    output 			wfull,
+    output 			rempty,
+    output reg [WIDTH-1:0] rdata
+    );
+   reg [DEPTH-1:0] 		RAM_MEM;
+   reg [WIDTH-1:0] 		rdata_buff;
+   reg [WIDTH-1:0] 		rdata_buff2;
+   reg [WIDTH-1:0] 		waddr_bin;
+   reg [WIDTH-1:0] 		raddr_bin;
+   reg [WIDTH-1:0] 		wptr;
+   reg [WIDTH-1:0] 		rptr;
+   reg [WIDTH-1:0] 		rptr_buff;
+   reg [WIDTH-1:0] 		rptr_buff2;
+   reg [WIDTH-1:0] 		wptr_buff;
+   reg [WIDTH-1:0] 		wptr_buff2;
+   reg 				wen;
+   reg 				ren;
+   wire [WIDTH-1:0] 		raddr;
+   wire [WIDTH-1:0] 		waddr;
+   wire [WIDTH-1:0] 		rptr_syn;
+   wire [WIDTH-1:0] 		wptr_syn;
+   wire 			full;
+   wire 			empty;
+   wire 			wen_syn;
+   wire 			ren_syn;
+   wire [WIDTH-1:0] 		rdata_syn;
+   wire [WIDTH-1:0] 		wdata_syn;
+   wire [WIDTH-1:0] 		raddr_syn;
+   wire [WIDTH-1:0] 		waddr_syn;
+   wire [WIDTH-1:0] 		rptr_buff_syn;
+   wire [WIDTH-1:0] 		wptr_buff_syn;
+   wire 			rptr_buff_syn_full;
+   wire 			wptr_buff_syn_full;
+   wire 			rptr_buff_syn_empty;
+   wire 			wptr_buff_syn_empty;
+   wire 			rptr_equal_wptr;
+   wire 			rptr_equal_wptr_buff;
+   wire 			rptr_equal_wptr_buff2;
+   wire 			rptr_equal_wptr2;
+   wire 			wptr_equal_rptr;
+   wire 			wptr_equal_rptr_buff;
+   wire 			wptr_equal_rptr_buff2;
+   wire 			wptr_equal_rptr2;
+   wire 			rptr_jump_raddr;
+   wire 			rptr_jump_raddr_buff;
+   wire 			rptr_jump_raddr_buff2;
+   wire 			rptr_jump_raddr2;
+   wire 			wptr_jump_waddr;
+   wire 			wptr_jump_waddr_buff;
+   wire 			wptr_jump_waddr_buff2;
+   wire 			wptr_jump_waddr2;
+   wire 			rptr_great_raddr;
+   wire 			rptr_great_raddr_buff;
+   wire 			rptr_great_raddr_buff2;
+   wire 			rptr_great_raddr2;
+   wire 			wptr_great_waddr;
+   wire 			wptr_great_waddr_buff;
+   wire 			wptr_great_waddr_buff2;
+   wire 			wptr_great_waddr2;
+   wire 			rptr_less_raddr;
+   wire 			rptr_less_raddr_buff;
+   wire 			rptr_less_raddr_buff2;
+   wire 			rptr_less_raddr2;
+   wire 			wptr_less_waddr;
+   wire 			wptr_less_waddr_buff;
+   wire 			wptr_less_waddr_buff2;
+   wire 			wptr_less_waddr2;
+   wire 			rptr_equal_raddr;
+   wire 			rptr_equal_raddr_buff;
+   wire 			rptr_equal_raddr_buff2;
+   wire 			rptr_equal_raddr2;
+   wire 			wptr_equal_waddr;
+   wire 			wptr_equal_waddr_buff;
+   wire 			wptr_equal_waddr_buff2;
+   wire 			wptr_equal_waddr2;
+   wire 			rptr_less_raddr;
+   wire 			rptr_less_raddr_buff;
+   wire 			rptr_less_raddr_buff2;
+   wire 			rptr_less_raddr2;
+   wire 			wptr_less_waddr;
+   wire 			wptr_less_waddr_buff;
+   wire 			wptr_less_waddr_buff2;
+   wire 			wptr_less_waddr2;
+   wire 			rptr_great_raddr;
+   wire 			rptr_great_raddr_buff;
+   wire 			rptr_great_raddr_buff2;
+   wire 			rptr_great_raddr2;
+   wire 			wptr_great_waddr;
+   wire 			wptr_great_waddr_buff;
+   wire 			wptr_great_waddr_buff2;
+   wire 			wptr_great_waddr2;
+   wire 			rptr_equal_raddr;
+   wire 			rptr_equal_raddr_buff;
+   wire 			rptr_equal_raddr_buff2;
+   wire 			rptr_equal_raddr2;
+   wire 			wptr_equal_waddr;
+   wire 			wptr_equal_waddr_buff;
+   wire 			wptr_equal_waddr_buff2;
+   wire 			wptr_equal_waddr2;
+   wire 			rptr_less_raddr;
+   wire 			rptr_less_raddr_buff;
+   wire 			rptr_less_raddr_buff2;
+   wire 			rptr_less_raddr2;
+   wire 			wptr_less_waddr;
+   wire 			wptr_less_waddr_buff;
+   wire 			wptr_less_waddr_buff2;
+   wire 			wptr_less_waddr2;
+   wire 			rptr_great_raddr;
+   wire 			rptr_great_raddr_buff;
+   wire 			rptr_great_raddr_buff2;
+   wire 			rptr_great_raddr2;
+   wire 			wptr_great_waddr;
+   wire 			wptr_great_waddr_buff;
+   wire 			wptr_great_waddr_buff2;
+   wire 			wptr_great_waddr2;
+   wire 			rptr_equal_raddr;
+   wire 			rptr_equal_raddr_buff;
+   wire 			rptr_equal_raddr_buff2;
+   wire 			rptr_equal_raddr2;
+   wire 			wptr_equal_waddr;
+   wire 			wptr_equal_waddr_buff;
+   wire 			wptr_equal_waddr_buff2;
+   wire 			wptr_equal_waddr2;
+   wire 			rptr_less_raddr;
+   wire 			rptr_less_raddr_buff;
+   wire 			rptr_less_raddr_buff2;
+   wire 			rptr_less_raddr2;
+   wire 			wptr_less_waddr;
+   wire 			wptr_less_waddr_buff;
+   wire 			wptr_less_waddr_buff2;
+   wire 			wptr_less_waddr2;
+   wire 			rptr_great_raddr;
+   wire 			rptr_great_raddr_buff;
+   wire 			rptr_great_raddr_buff2;
+   wire 			rptr_great_raddr2;
+   wire 			wptr_great_waddr;
+   wire 			wptr_great_waddr_buff;
+   wire 			wptr_great_waddr_buff2;
+   wire 			wptr_great_waddr2;
+   wire 			rptr_equal_raddr;
+   wire 			rptr_equal_raddr_buff;
+   wire 			rptr_equal_raddr_buff2;
+   wire 			rptr_equal_raddr2;
+   wire 			wptr_equal_waddr;
+   wire 			wptr_equal_waddr_buff;
+   wire 			wptr_equal_waddr_buff2;
+   wire 			wptr_equal_waddr2;
+   wire 			rptr_less_raddr;
+   wire 			rptr_less_raddr_buff;
+   wire 			rptr_less_raddr_buff2;
+   wire 			rptr_less_raddr2;
+   wire 			wptr_less_waddr;
+   wire 			wptr_less_waddr_buff;
+   wire 			wptr_less_waddr_buff2;
+   wire 			wptr_less_waddr2;
+   wire 			rptr_great_raddr;
+   wire 			rptr_great_raddr_buff;
+   wire 			r

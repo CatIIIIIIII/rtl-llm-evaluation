@@ -1,11 +1,13 @@
 # vsim -c -do "run -all; quit" testbench 
-# Start time: 03:23:33 on May 25,2024
+# Start time: 05:59:34 on May 28,2024
 # Loading sv_std.std
 # Loading work.testbench
 # Loading work.width_8to16
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (8) for port 'data_in'. The port definition is at: width_8to16.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /testbench/dut File: testbench.v Line: 9
 # run -all
-# ===========Your Design Passed===========
+# ===========Test completed with           2 / 3 failures===========
 # ** Note: $finish    : testbench.v(48)
 #    Time: 100 ns  Iteration: 0  Instance: /testbench
-# End time: 03:23:34 on May 25,2024, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
+# End time: 05:59:34 on May 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1

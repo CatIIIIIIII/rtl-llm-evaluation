@@ -1,10 +1,9 @@
 import os
 import itertools
 import numpy as np
-import os.path as osp
 from collections import Counter, defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
-
+import time
 from ...utils import exec_shell
 
 _WARNING = """
@@ -62,7 +61,7 @@ def compute_code_eval(generations, references, check_correct, k=[1, 5, 100], num
             for future in as_completed(futures):
                 result = future.result()
                 results[result["task_id"]].append((result["completion_id"], result))
-
+        
     total_syntax, correct_syntax = [], []
     total_testbench, correct_testbench = [], []
     for result in results.values():

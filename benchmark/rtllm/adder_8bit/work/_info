@@ -11,54 +11,29 @@ cModel Technology
 Z0 d/home/wangning/RTLDebugger/rtl-llm-evaluation/benchmark/rtllm/adder_8bit
 vadder_8bit
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1716607420
+Z2 !s110 1716875976
 !i10b 1
-!s100 B``79A;6^X8ejkc370=473
+!s100 M8<aIT<RkLNiP@2ENYKlA3
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-Ioe[Jhn90QZfeP0ccmZ?S73
+IiAO4ac]I^CAej70[_;8R^2
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-Z5 w1716607420
-Z6 8adder_8bit.v
-Z7 Fadder_8bit.v
-!i122 2
-L0 3 20
-Z8 OV;L;2020.1;71
+w1716875976
+8adder_8bit.v
+Fadder_8bit.v
+!i122 4
+L0 1 17
+Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z9 !s108 1716607420.000000
+Z6 !s108 1716875976.000000
 !s107 testbench.v|adder_8bit.v|
-Z10 !s90 +acc|-work|work|-sv|adder_8bit.v|testbench.v|
+Z7 !s90 +acc|-work|work|-sv|adder_8bit.v|testbench.v|
 !i113 1
-Z11 o+acc -work work -sv
-Z12 tCvgOpt 0
-vfull_adder
-R1
-R2
-!i10b 1
-!s100 1To@D<HAoQd4jEnkATWm43
-R3
-ITEBYGn@0K;QHgn=;4MVhM3
-R4
-S1
-R0
-R5
-R6
-R7
-!i122 2
-L0 24 12
-R8
-r1
-!s85 0
-31
-R9
-Z13 !s107 testbench.v|adder_8bit.v|
-R10
-!i113 1
-R11
-R12
+Z8 o+acc -work work -sv
+Z9 tCvgOpt 0
 vtestbench
 R1
 R2
@@ -72,15 +47,15 @@ R0
 w1715241362
 8testbench.v
 Ftestbench.v
-!i122 2
+!i122 4
 L0 3 40
-R8
+R5
 r1
 !s85 0
 31
-R9
-R13
-R10
+R6
+Z10 !s107 testbench.v|adder_8bit.v|
+R7
 !i113 1
-R11
-R12
+R8
+R9

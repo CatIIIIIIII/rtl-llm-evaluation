@@ -1,27 +1,27 @@
-
-module edge_detect(clk, rst_n, a, rise, down);
-    input clk, rst_n, a;
-    output rise, down;
-
-    reg rise, down;
-    reg prev_a;
-
-    always @(posedge clk or negedge rst_n) begin
-        if (~rst_n) begin
-            rise <= 0;
-            down <= 0;
-            prev_a <= 0;
-        end else begin
-            if (a == 1 && prev_a == 0) begin
-                rise <= 1;
-            end else if (a == 0 && prev_a == 1) begin
-                down <= 1;
-            end else begin
-                rise <= 0;
-                down <= 0;
-            end
-            prev_a <= a;
-        end
-    end
+ module edge_detect(
+	input clk,
+	input rst_n,
+	input a,
+	output rise,
+	output down
+);
+	reg r_rise, r_down;
+	always @(posedge clk) begin
+		if (rst_n == 1'b0) begin
+			r_rise <= 1'b0;
+			r_down <= 1'b0;
+		end
+		else begin
+			if (a == 1'b1 && r_rise == 1'b1)
+				r_rise <= 1'b0;
+			else if (a == 1'b1)
+				r_rise <= 1'b1;
+			if (a == 1'b0 && r_down == 1'b1)
+				r_down <= 1'b0;
+			else if (a == 1'b0)
+				r_down <= 1'b1;
+		end
+	end
+	assign rise = r_rise;
+	assign down = r_down;
 endmodule
-//END

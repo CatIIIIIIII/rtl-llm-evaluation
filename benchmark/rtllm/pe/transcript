@@ -1,5 +1,5 @@
 # vsim -c -do "run -all; quit" testbench 
-# Start time: 03:23:32 on May 25,2024
+# Start time: 05:59:42 on May 28,2024
 # Loading sv_std.std
 # Loading work.testbench
 # Loading work.pe
@@ -9,5 +9,5 @@
 # run -all
 # ===========Error===========
 #  quit
-# End time: 03:23:32 on May 25,2024, Elapsed time: 0:00:00
+# End time: 05:59:42 on May 28,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 2
