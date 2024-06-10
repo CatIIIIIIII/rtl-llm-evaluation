@@ -1,11 +1,11 @@
 # vsim -c -do "run -all; quit" testbench 
-# Start time: 05:59:43 on May 28,2024
+# Start time: 06:25:59 on Jun 10,2024
 # Loading sv_std.std
 # Loading work.testbench
 # Loading work.signal_generator
 # run -all
-# ===========Error===========
+# ===========Your Design Passed===========
 # ** Note: $finish    : testbench.v(39)
 #    Time: 1010 ps  Iteration: 0  Instance: /testbench
-# End time: 05:59:43 on May 28,2024, Elapsed time: 0:00:00
+# End time: 06:25:59 on Jun 10,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0

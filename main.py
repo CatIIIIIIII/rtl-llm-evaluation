@@ -258,15 +258,6 @@ def main():
         # Some models like CodeGeeX2 have pad_token as a read-only property
         except AttributeError:
             print("Not setting pad_token to eos_token")
-        WIZARD_LLAMA_MODELS = [
-            "WizardLM/WizardCoder-Python-34B-V1.0",
-            "WizardLM/WizardCoder-34B-V1.0",
-            "WizardLM/WizardCoder-Python-13B-V1.0"
-        ]
-        if args.model in WIZARD_LLAMA_MODELS:
-            tokenizer.bos_token = "<s>"
-            tokenizer.bos_token_id = 1
-            print("Changing bos_token to <s>")
         
         evaluator = Evaluator(accelerator, model, tokenizer, args)
 

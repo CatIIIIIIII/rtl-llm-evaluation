@@ -11,51 +11,51 @@ cModel Technology
 Z0 d/home/wangning/RTLDebugger/rtl-llm-evaluation/benchmark/rtllm/traffic_light
 vtestbench
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1716875982
+!s110 1718000786
 !i10b 1
 !s100 MKKRVl5@YTgFO4dBj2EZ@1
-Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
 INP_1GVnKVjVjAG?a8cM2O0
-Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
 w1715532580
 8testbench.v
 Ftestbench.v
-!i122 3
+!i122 4
 L0 3 79
-Z5 OV;L;2020.1;71
+Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1716875982.000000
-!s107 testbench.v|traffic_light.v|
-Z7 !s90 +acc|-work|work|-sv|traffic_light.v|testbench.v|
+!s108 1718000786.000000
+Z5 !s107 testbench.v|traffic_light.v|
+Z6 !s90 +acc|-work|work|-sv|traffic_light.v|testbench.v|
 !i113 1
-Z8 o+acc -work work -sv
-Z9 tCvgOpt 0
+Z7 o+acc -work work -sv
+Z8 tCvgOpt 0
 vtraffic_light
 R1
-R2
+!s110 1718000778
 !i10b 1
-!s100 f1AkHeE;891IOhl><7G122
+!s100 ?nhEoV1_>HM:`=QJGHMo71
+R2
+I^TcI`7Y>U9oX?U:OlJ:b12
 R3
-I9XK4lS<gXeTG14SCz`;^l3
-R4
 S1
 R0
-w1716875982
+w1718000778
 8traffic_light.v
 Ftraffic_light.v
 !i122 3
-L0 5 117
-R5
+L0 1 92
+R4
 r1
 !s85 0
 31
+!s108 1718000778.000000
+R5
 R6
-Z10 !s107 testbench.v|traffic_light.v|
-R7
 !i113 1
+R7
 R8
-R9

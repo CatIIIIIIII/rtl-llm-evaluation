@@ -7,29 +7,4 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 d/home/wangning/RTLDebugger/rtl-llm-evaluation/benchmark/rtllm/RAM
-vtestbench
-DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-!s110 1716875962
-!i10b 1
-!s100 gQVHIc7P0N2^nNnAak?D_3
-!s11b Dg1SIo80bB@j0V0VzS_@n1
-I4FkbIbGGk@fTGGz:aKGBO0
-VDg1SIo80bB@j0V0VzS_@n1
-S1
-R0
-w1715531959
-8testbench.v
-Ftestbench.v
-!i122 0
-L0 3 80
-OV;L;2020.1;71
-r1
-!s85 0
-31
-!s108 1716875962.000000
-!s107 testbench.v|RAM.v|
-!s90 +acc|-work|work|-sv|RAM.v|testbench.v|
-!i113 1
-o+acc -work work -sv
-tCvgOpt 0
+d/home/wangning/RTLDebugger/rtl-llm-evaluation/benchmark/rtllm/RAM

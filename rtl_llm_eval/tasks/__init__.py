@@ -1,10 +1,12 @@
 import inspect
 from pprint import pprint
 
-from . import rtllm
+from . import rtllm, radix, instruct
 
 TASK_REGISTRY = {
     "rtllm": rtllm.RTLLM,
+    "radix": radix.RADIX,
+    "instruct": instruct.Instruct,
 }
 
 ALL_TASKS = sorted(list(TASK_REGISTRY))

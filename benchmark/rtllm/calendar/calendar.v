@@ -1,54 +1,35 @@
-
-module calendar(
-	input CLK,
-	input RST,
-	output reg [5:0] Hours,
-	output reg [5:0] Mins,
-	output reg [5:0] Secs
-);
-	always @(posedge CLK or posedge RST) begin
-		if (RST) begin
-			Secs <= 6'd0;
-		end
-		else begin
-			if (Secs == 6'd59) begin
-				Secs <= 6'd0;
-			end
-			else begin
-				Secs <= Secs + 6'd1;
-			end
-		end
-	end
-	always @(posedge CLK or posedge RST) begin
-		if (RST) begin
-			Mins <= 6'd0;
-		end
-		else begin
-			if (Mins == 6'd59 && Secs == 6'd59) begin
-				Mins <= 6'd0;
-			end
-			else if (Secs == 6'd59) begin
-				Mins <= Mins + 6'd1;
-			end
-			else begin
-				Mins <= Mins;
-			end
-		end
-	end
-	always @(posedge CLK or posedge RST) begin
-		if (RST) begin
-			Hours <= 6'd0;
-		end
-		else begin
-			if (Hours == 6'd23 && Mins == 6'd59 && Secs == 6'd59) begin
-				Hours <= 6'd0;
-			end
-			else if (Mins == 6'd59 && Secs == 6'd59) begin
-				Hours <= Hours + 6'd1;
-			end
-			else begin
-				Hours <= Hours;
-			end
-		end
-	end
+ module calendar(
+    input CLK,
+    input RST,
+    output reg [5:0] Hours,
+    output reg [5:0] Mins,
+    output reg [5:0] Secs
+    );
+    always @(posedge CLK or posedge RST)
+    begin
+        if(RST)
+            Secs <= 0;
+        else if(Secs == 59)
+            Secs <= 0;
+        else
+            Secs <= Secs + 1;
+    end
+    always @(posedge CLK or posedge RST)
+    begin
+        if(RST)
+            Mins <= 0;
+        else if(Mins == 59 && Secs == 59)
+            Mins <= 0;
+        else if(Secs == 59)
+            Mins <= Mins + 1;
+    end
+    always @(posedge CLK or posedge RST)
+    begin
+        if(RST)
+            Hours <= 0;
+        else if(Hours == 23 && Mins == 59 && Secs == 59)
+            Hours <= 0;
+        else if(Mins == 59 && Secs == 59)
+            Hours <= Hours + 1;
+    end
 endmodule

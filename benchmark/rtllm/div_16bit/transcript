@@ -1,5 +1,5 @@
 # vsim -c -do "run -all; quit" testbench 
-# Start time: 05:59:39 on May 28,2024
+# Start time: 06:26:23 on Jun 10,2024
 # Loading sv_std.std
 # Loading work.testbench
 # Loading work.div_16bit
@@ -7,5 +7,5 @@
 # ===========Test completed with         100 /100 failures===========
 # ** Note: $finish    : testbench.v(31)
 #    Time: 1 us  Iteration: 0  Instance: /testbench
-# End time: 05:59:39 on May 28,2024, Elapsed time: 0:00:00
+# End time: 06:26:24 on Jun 10,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0

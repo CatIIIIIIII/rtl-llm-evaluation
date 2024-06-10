@@ -11,24 +11,24 @@ cModel Technology
 Z0 d/home/wangning/RTLDebugger/rtl-llm-evaluation/benchmark/rtllm/serial2parallel
 vserial2parallel
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1716875981
+Z2 !s110 1718000786
 !i10b 1
-!s100 >R2=[6_oDJ:Q<M@=^_T`[0
+!s100 lDjmBA82FlV<O@T[n>@SJ2
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I<b83DTJPeNYKAUSH2Z9]31
+IBLO7DM;iiild8L1eNOUFz3
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-w1716875981
+w1718000786
 8serial2parallel.v
 Fserial2parallel.v
-!i122 4
-L0 1 42
+!i122 3
+L0 1 35
 Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1716875981.000000
+Z6 !s108 1718000786.000000
 !s107 testbench.v|serial2parallel.v|
 Z7 !s90 +acc|-work|work|-sv|serial2parallel.v|testbench.v|
 !i113 1
@@ -47,7 +47,7 @@ R0
 w1715532161
 8testbench.v
 Ftestbench.v
-!i122 4
+!i122 3
 L0 1 70
 R5
 r1

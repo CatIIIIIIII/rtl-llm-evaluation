@@ -150,3 +150,305 @@ Fri May 24 10:21:00 2024
 # Date = "Feb 28 2020"
 # Platform = "linuxaloem"
 # 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# Current time Mon Jun  3 03:50:20 2024
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# Current time Mon Jun  3 04:08:08 2024
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# Current time Mon Jun  3 10:23:27 2024
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# Current time Mon Jun  3 10:40:39 2024
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# Current time Mon Jun  3 10:48:15 2024
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# Current time Tue Jun  4 08:21:03 2024
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# transcript error: error writing "stdout": broken pipe
+    while executing
+"puts -nonewline stdout $s"
+# Current time Tue Jun  4 08:25:45 2024
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# Current time # Current time Tue Jun  4 16:04:32 2024
+# Tue Jun  4 16:04:32 2024
+ModelSim - Intel FPGA Edition#  Stack Trace
+# Program = ModelSimvish - Intel FPGA Edition
+ Stack Trace
+# Id = "# Program = 2020.1vish"
+
+# Version = "# Id = "2020.022020.1"
+"
+# Date = "# Version = "Feb 28 20202020.02"
+"
+# Platform = "# Date = "linuxaloem"
+Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# Current time Thu Jun  6 08:18:23 2024
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# Current time Thu Jun  6 11:56:47 2024
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# transcript error: error writing "stdout": broken pipe
+    while executing
+"puts -nonewline stdout $s"
+# Current time # Current time Thu Jun  6 13:54:04 2024
+# Current time Thu Jun  6 13:54:04 2024
+# Thu Jun  6 13:54:04 2024
+# ModelSim# ModelSimModelSim - Intel FPGA Edition - Intel FPGA Edition - Intel FPGA Edition Stack Trace
+ Stack Trace
+ Stack Trace
+# Program = # Program = # Program = vishvishvish
+
+
+# Id = "# Id = "# Id = "2020.12020.12020.1"
+"
+# Version = "2020.02# Version = ""
+2020.02# Date = ""
+Feb 28 2020# Date = ""
+Feb 28 2020# Platform = ""
+linuxaloem# Platform = ""
+linuxaloem"
+"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# Current time Thu Jun  6 16:59:02 2024
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# Current time Fri Jun  7 08:44:45 2024
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# Current time Fri Jun  7 08:44:45 2024
+# ModelSim# Current time  - Intel FPGA Edition Stack Trace
+Fri Jun  7 08:44:45 2024
+# Program = # vishModelSim
+ - Intel FPGA Edition# Id = " Stack Trace
+2020.1# Program = "
+vish# Version = "
+2020.02# Id = ""
+# Date = "2020.1Feb 28 2020"
+"
+# Version = "# Platform = "2020.02linuxaloem"
+"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# Current time Fri Jun  7 12:17:21 2024
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# Current time Fri Jun  7 12:17:21 2024
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# Current time Sat Jun  8 03:09:14 2024
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# Current time Sat Jun  8 03:14:05 2024
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# Current time Sat Jun  8 13:40:59 2024
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# Current time Sat Jun  8 13:46:00 2024
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# Current time Sat Jun  8 15:46:00 2024
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# Current time Sat Jun  8 15:54:30 2024
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# Current time Sat Jun  8 16:56:23 2024
+# ModelSim - Intel FPGA Edition Stack Trace
+# Current time # Program = Sat Jun  8 16:56:23 2024
+# Current time # Current time vish# 
+ModelSimSat Jun  8 16:56:23 2024
+# Id = " - Intel FPGA Edition# 2020.1 Stack Trace
+ModelSim"
+# Program =  - Intel FPGA Edition# Version = "vish Stack Trace
+2020.02
+# Program = "
+# Id = "vish# Date = "2020.1
+Feb 28 2020"
+# Id = ""
+# Version = "2020.1# Platform = "2020.02"
+linuxaloem"
+# Version = ""
+# Date = "2020.02Feb 28 2020Sat Jun  8 16:56:23 2024
+"
+"
+# Date = "# Platform = "Feb 28 2020linuxaloem"
+# "
+# Platform = "ModelSimlinuxaloem - Intel FPGA Edition"
+ Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# Current time # Current time Sat Jun  8 17:07:37 2024
+# Sat Jun  8 17:07:37 2024
+ModelSim#  - Intel FPGA EditionModelSim Stack Trace
+ - Intel FPGA Edition# Program =  Stack Trace
+vish# Program = 
+vish# Id = "
+# Id = "2020.12020.1"
+"
+# Version = "# Version = "2020.022020.02"
+"
+# Date = "# Date = "Feb 28 2020Feb 28 2020"
+"
+# Platform = "# Platform = "linuxaloemlinuxaloem"
+"
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# Current time Sun Jun  9 07:39:08 2024
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# Current time Sun Jun  9 08:09:15 2024
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# Current time Sun Jun  9 12:32:56 2024
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# Current time Sun Jun  9 15:47:21 2024
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'
+# Current time Mon Jun 10 02:19:00 2024
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0xf7fc4549: '<unknown (@0xf7fc4549)>'

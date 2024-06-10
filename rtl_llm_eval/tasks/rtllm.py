@@ -32,7 +32,7 @@ class RTLLM(Task):
 
     def __init__(self):
         super().__init__(
-            stop_words=["\n\n\n\n\n", "\\END"],
+            stop_words=['</s>'],
         )
         self._clean()
         
@@ -58,7 +58,8 @@ class RTLLM(Task):
         with open(osp.join(exp_path, "design_description.txt")) as f:
             design_desc = f.readlines()
         design_desc = "".join(design_desc)
-        prompt = f'"""{design_desc}\nYou could define helper functions if needed. When you have finished, end the whole file with a line containing only "//END". \n"""'
+        prompt = f'"""{design_desc}"""'
+        prompt = f'"""[INST]\n{design_desc}\n[/INST]"""'
         return prompt
 
     def get_reference(self, doc):
@@ -139,7 +140,7 @@ class RTLLM(Task):
             testbench_passed = False
             if syntax_passed:
                 exit_code, cmd_output = exec_shell(f"bash {self.DATASET_PATH}/make_testbench.sh {exp_name}")
-                testbench_passed = ("Errors: 0, Warnings: 0" in cmd_output)
+                testbench_passed = ("Your Design Passed" in cmd_output)
         else:
             syntax_passed, testbench_passed = False, False
         

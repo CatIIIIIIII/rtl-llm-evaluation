@@ -1,38 +1,33 @@
-
-module signal_generator(
+ module signal_generator(
 	input clk,
 	input rst_n,
-	output reg [4:0] wave
-);
+	output [4:0] wave
+    );
 	reg [1:0] state;
-	always @(posedge clk or negedge rst_n) begin
-		if(~rst_n) begin
+	reg [4:0] wave;
+	always @(posedge clk or negedge rst_n)
+	begin
+		if (~rst_n)
+		begin
 			state <= 0;
 			wave <= 0;
 		end
-		else begin
-			case(state)
-				0: begin
-					wave <= wave + 1;
-					if(wave == 31) begin
+		else
+		begin
+			case (state)
+				0:
+				begin
+					if (wave == 31)
 						state <= 1;
-						wave <= wave;
-					end
-					else begin
-						state <= state;
-						wave <= wave;
-					end
+					else
+						wave <= wave + 1;
 				end
-				1: begin
-					wave <= wave - 1;
-					if(wave == 0) begin
+				1:
+				begin
+					if (wave == 0)
 						state <= 0;
-						wave <= wave;
-					end
-					else begin
-						state <= state;
-						wave <= wave;
-					end
+					else
+						wave <= wave - 1;
 				end
 			endcase
 		end

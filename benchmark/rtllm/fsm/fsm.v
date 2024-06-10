@@ -1,85 +1,145 @@
  module fsm(
-	input IN,
-	input CLK,
-	input RST,
-	output reg MATCH
-);
-	reg [2:0] state;
-	reg [2:0] nextState;
-	parameter S0 = 3'b000, S1 = 3'b001, S2 = 3'b010, S3 = 3'b011, S4 = 3'b100, S5 = 3'b101;
-	always @(posedge CLK) begin
-		if(RST) begin
-			state <= S0;
-			MATCH <= 0;
-		end
-		else begin
-			state <= nextState;
-			case(state)
-				S0: begin
-					if(IN) begin
-						nextState <= S1;
-						MATCH <= 0;
-					end
-					else begin
-						nextState <= S0;
-						MATCH <= 0;
-					end
-				end
-				S1: begin
-					if(IN) begin
-						nextState <= S2;
-						MATCH <= 0;
-					end
-					else begin
-						nextState <= S0;
-						MATCH <= 0;
-					end
-				end
-				S2: begin
-					if(IN) begin
-						nextState <= S3;
-						MATCH <= 0;
-					end
-					else begin
-						nextState <= S0;
-						MATCH <= 0;
-					end
-				end
-				S3: begin
-					if(IN) begin
-						nextState <= S4;
-						MATCH <= 0;
-					end
-					else begin
-						nextState <= S0;
-						MATCH <= 0;
-					end
-				end
-				S4: begin
-					if(IN) begin
-						nextState <= S5;
-						MATCH <= 1;
-					end
-					else begin
-						nextState <= S0;
-						MATCH <= 0;
-					end
-				end
-				S5: begin
-					if(IN) begin
-						nextState <= S5;
-						MATCH <= 1;
-					end
-					else begin
-						nextState <= S0;
-						MATCH <= 0;
-					end
-				end
-				default: begin
-					nextState <= S0;
-					MATCH <= 0;
-				end
-			endcase
-		end
-	end
+    input IN,
+    input CLK,
+    input RST,
+    output reg MATCH
+    );
+    reg [7:0] state;
+    reg [7:0] next_state;
+    parameter S0 = 8'b00000001;
+    parameter S1 = 8'b00000010;
+    parameter S2 = 8'b00000100;
+    parameter S3 = 8'b00001000;
+    parameter S4 = 8'b00010000;
+    parameter S5 = 8'b00100000;
+    parameter S6 = 8'b01000000;
+    parameter S7 = 8'b10000000;
+    always @(posedge CLK or posedge RST)
+    begin
+        if(RST)
+            MATCH <= 0;
+        else
+        begin
+            state <= next_state;
+            case(state)
+                S0:
+                begin
+                    if(IN == 1)
+                        MATCH <= 1;
+                    else
+                        MATCH <= 0;
+                end
+                S1:
+                begin
+                    if(IN == 1)
+                        MATCH <= 1;
+                    else
+                        MATCH <= 0;
+                end
+                S2:
+                begin
+                    if(IN == 1)
+                        MATCH <= 1;
+                    else
+                        MATCH <= 0;
+                end
+                S3:
+                begin
+                    if(IN == 1)
+                        MATCH <= 1;
+                    else
+                        MATCH <= 0;
+                end
+                S4:
+                begin
+                    if(IN == 1)
+                        MATCH <= 1;
+                    else
+                        MATCH <= 0;
+                end
+                S5:
+                begin
+                    if(IN == 1)
+                        MATCH <= 1;
+                    else
+                        MATCH <= 0;
+                end
+                S6:
+                begin
+                    if(IN == 1)
+                        MATCH <= 1;
+                    else
+                        MATCH <= 0;
+                end
+                S7:
+                begin
+                    if(IN == 1)
+                        MATCH <= 1;
+                    else
+                        MATCH <= 0;
+                end
+            endcase
+        end
+    end
+    always @(IN or state)
+    begin
+        case(state)
+            S0:
+            begin
+                if(IN == 1)
+                    next_state <= S1;
+                else
+                    next_state <= S0;
+            end
+            S1:
+            begin
+                if(IN == 1)
+                    next_state <= S2;
+                else
+                    next_state <= S0;
+            end
+            S2:
+            begin
+                if(IN == 1)
+                    next_state <= S3;
+                else
+                    next_state <= S0;
+            end
+            S3:
+            begin
+                if(IN == 1)
+                    next_state <= S4;
+                else
+                    next_state <= S0;
+            end
+            S4:
+            begin
+                if(IN == 1)
+                    next_state <= S5;
+                else
+                    next_state <= S0;
+            end
+            S5:
+            begin
+                if(IN == 1)
+                    next_state <= S6;
+                else
+                    next_state <= S0;
+            end
+            S6:
+            begin
+                if(IN == 1)
+                    next_state <= S7;
+                else
+                    next_state <= S0;
+            end
+            S7:
+            begin
+                if(IN == 1)
+                    next_state <= S7;
+                else
+                    next_state <= S0;
+            end
+        endcase
+    end
 endmodule

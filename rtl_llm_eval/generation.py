@@ -113,7 +113,7 @@ def parallel_generations(
         dataset,
         tokenizer,
         num_devices=accelerator.state.num_processes,
-        max_length=args.max_length_generation,
+        max_length=args.max_length_generation-1,
         limit_start=args.limit_start + curr_sample_idx,
         n_tasks=n_tasks,
         n_copies=n_copies,
@@ -124,7 +124,7 @@ def parallel_generations(
 
     # do not confuse args.batch_size, which is actually the num_return_sequences
     ds_loader = DataLoader(ds_tokenized, batch_size=1)
-
+    
     is_loaded_in_8bit = getattr(model, "is_loaded_in_8bit", False)
     is_loaded_in_4bit = getattr(model, "is_loaded_in_4bit", False)
     if args.max_memory_per_gpu is not None:

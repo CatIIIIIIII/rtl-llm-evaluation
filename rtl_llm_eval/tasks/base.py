@@ -62,7 +62,7 @@ class Task(ABC):
     def postprocess_generation(self, generation, idx):
         """Defines the postprocessing for a LM generation.
         :param generation: str
-            code generation from LM
+            code ge1neration from LM
         :param idx: int
             index of doc in the dataset to which the generation belongs
         """
